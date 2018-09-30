@@ -11,7 +11,7 @@ router.register('login', views.LoginViewSet, base_name='login')
 router.register('register', views.RegisterViewSet, base_name='register')
 router.register('pictures', views.PictureItemViewSet)
 router.register('random_picture', views.RandomPictureItemViewSet)
-router.register('grades', views.GradeItemViewSet)e
+router.register('grades', views.GradeItemViewSet)
 
 urlpatterns = [
     url(r'^api/', include(router.urls)),

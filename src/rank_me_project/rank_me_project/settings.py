@@ -131,13 +131,6 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
 AUTH_USER_MODEL = 'rank_me_api.UserProfile'
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        #'rest_framework.permissions.IsAuthenticated',
-    ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        #'rest_framework.authentication.TokenAuthentication'
-        #'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-        #'rest_framework.authentication.SessionAuthentication',
-        #'rest_framework.authentication.BasicAuthentication',
-    ),
+    'DEFAULT_PERMISSION_CLASSES': (),
+    'DEFAULT_AUTHENTICATION_CLASSES': (),
 }

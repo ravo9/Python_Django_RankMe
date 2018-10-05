@@ -125,12 +125,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-#STATIC_ROOT = "/var/www/example.com/static/"
-#STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
-
-
-#ENV_PATH = os.path.abspath(os.path.dirname(__file__))
-#MEDIA_ROOT = os.path.join(ENV_PATH, 'media/')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')

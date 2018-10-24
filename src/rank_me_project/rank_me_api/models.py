@@ -56,7 +56,7 @@ class PictureItem(models.Model):
     """A picture object."""
 
     profile         = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    status_text     = models.CharField(max_length=255, null=True, blank=True)
+    comment         = models.CharField(max_length=255, null=True, blank=True)
     picture         = models.ImageField(upload_to='pictures')
     timestamp       = models.DateTimeField(auto_now_add=True)
 
@@ -68,7 +68,7 @@ class GradeItem(models.Model):
     """A picture's grade."""
 
     picture         = models.ForeignKey('PictureItem', on_delete=models.CASCADE)
-    status_text     = models.CharField(max_length=255, null=True, blank=True)
+    comment         = models.CharField(max_length=255, null=True, blank=True)
     grading_profile = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
     grade           = models.IntegerField()
     timestamp       = models.DateTimeField(auto_now_add=True)

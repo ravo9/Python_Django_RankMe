@@ -35,7 +35,7 @@ class PictureItemSerializer(serializers.ModelSerializer):
         fields  = [
             'id',
             'profile', # Indicates the user (picture's owner).
-            'status_text',
+            'comment',
             'picture',
             'timestamp',
         ]
@@ -48,7 +48,7 @@ class GradeItemSerializer(serializers.ModelSerializer):
         fields  = [
             'id',
             'picture',
-            'status_text',
+            'comment',
             'grading_profile',
             'grade',
             'timestamp',

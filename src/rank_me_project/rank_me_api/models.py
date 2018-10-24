@@ -61,7 +61,7 @@ class PictureItem(models.Model):
     timestamp       = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.status_text
+        return ""
 
 
 class GradeItem(models.Model):
@@ -74,4 +74,4 @@ class GradeItem(models.Model):
     timestamp       = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.status_text
+        return ""

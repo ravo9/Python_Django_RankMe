@@ -35,6 +35,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     name                    = models.CharField(max_length=255)
     age                     = models.IntegerField(null=True, blank=True)
     gender                  = models.CharField(max_length=255, blank=True)
+    preference               = models.CharField(max_length=255, blank=True)
     main_profile_picture    = models.ForeignKey('PictureItem', null=True, blank=True, on_delete=models.SET_NULL)
     is_active               = models.BooleanField(default=True)
     is_staff                = models.BooleanField(default=False)

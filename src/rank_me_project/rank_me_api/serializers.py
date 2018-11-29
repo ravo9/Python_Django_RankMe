@@ -13,6 +13,7 @@ class ProfileSerializer(serializers.ModelSerializer):
             'password',
             'age',
             'gender',
+            'preference',
             'main_profile_picture'
             )
         extra_kwargs = {'password': {'write_only': True}}

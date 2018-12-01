@@ -36,7 +36,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     age                     = models.IntegerField(null=True, blank=True)
     gender                  = models.CharField(max_length=255, blank=True)
     preference              = models.CharField(max_length=255, blank=True)
-    given_grades_amount     = models.IntegerField(null=True, blank=True)
+    given_grades_amount     = models.IntegerField(default=0)
     main_profile_picture    = models.ForeignKey('PictureItem', null=True, blank=True, on_delete=models.SET_NULL)
     is_active               = models.BooleanField(default=True)
     is_staff                = models.BooleanField(default=False)

@@ -30,6 +30,19 @@ class ProfileSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
+    def update(self, instance, validated_data):
+        instance.email = validated_data.get('email', instance.email)
+        instance.name = validated_data.get('name', instance.name)
+        instance.password = validated_data.get('password', instance.password)
+        instance.age = validated_data.get('age', instance.age)
+        instance.gender = validated_data.get('gender', instance.gender)
+        instance.preference = validated_data.get('preference', instance.preference)
+        instance.given_grades_amount = validated_data.get('given_grades_amount', instance.given_grades_amount)
+        instance.name = validated_data.get('name', instance.name)
+        instance.main_profile_picture = validated_data.get('main_profile_picture', instance.main_profile_picture)
+        instance.save()
+        return instance
+
 
 class PictureItemSerializer(serializers.ModelSerializer):
     class Meta:

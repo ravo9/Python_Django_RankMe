@@ -17,6 +17,7 @@ class ProfileSerializer(serializers.ModelSerializer):
             'given_grades_amount',
             'main_profile_picture'
             )
+        extra_kwargs = {'password': {'write_only': True}}
 
     # We want to override the 'create' function in order to encrypt the password.
     def create(self, validated_data):

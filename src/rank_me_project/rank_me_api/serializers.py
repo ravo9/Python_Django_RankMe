@@ -31,11 +31,11 @@ class ProfileSerializer(serializers.ModelSerializer):
         return user
 
     def update(self, instance, validated_data):
+        self.password = set_password(self.password)
+        return super(ProfileSerializer, self).update(instance, validated_data)
         #instance.email = validated_data.get('email', instance.email)
         #instance.name = validated_data.get('name', instance.name)
-        instance.password = validated_data.get('password', instance.password)
-        super().update(*args, **kwargs)
-        instance.password = validated_data.get('password', instance.password)
+        #instance.password = validated_data.get('password', instance.password)
         #instance.age = validated_data.get('age', instance.age)
         #instance.gender = validated_data.get('gender', instance.gender)
         #instance.preference = validated_data.get('preference', instance.preference)

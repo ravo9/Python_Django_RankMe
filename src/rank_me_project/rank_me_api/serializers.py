@@ -33,7 +33,8 @@ class ProfileSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         #instance.email = validated_data.get('email', instance.email)
         #instance.name = validated_data.get('name', instance.name)
-        super(self, serializers.ModelSerializer).update(self, instance, validated_data)
+        instance.password = validated_data.get('password', instance.password)
+        super().update(*args, **kwargs)
         instance.password = validated_data.get('password', instance.password)
         #instance.age = validated_data.get('age', instance.age)
         #instance.gender = validated_data.get('gender', instance.gender)

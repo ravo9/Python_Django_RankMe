@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.conf import settings
 from django.contrib import admin
-from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
+from django.contrib.auth.models import User, AbstractBaseUser, PermissionsMixin, BaseUserManager
 
 
 class UserProfileManager(BaseUserManager):
@@ -28,11 +28,11 @@ class UserProfileManager(BaseUserManager):
         return profile
 
 
-class UserProfile(AbstractBaseUser, PermissionsMixin):
+class UserProfile(AbstractBaseUser, PermissionsMixin, BaseUserManager):
     """Represents a user profile inside our system."""
 
     email                   = models.EmailField(max_length=255, unique=True)
-    password                = BaseUserManager.set_password(password)
+    password.set_password(password)
     name                    = models.CharField(max_length=255)
     age                     = models.IntegerField(null=True, blank=True)
     gender                  = models.CharField(max_length=255, blank=True)

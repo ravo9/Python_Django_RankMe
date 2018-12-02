@@ -32,6 +32,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     """Represents a user profile inside our system."""
 
     email                   = models.EmailField(max_length=255, unique=True)
+    # I have just added password here.
     password                = models.CharField(max_length=16)
     name                    = models.CharField(max_length=255)
     age                     = models.IntegerField(null=True, blank=True)

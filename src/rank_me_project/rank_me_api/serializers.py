@@ -31,7 +31,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         return user
 
     def update(self, instance, validated_data):
-        self.password = set_password(self.password)
+        instance.set_password(instance.password)
         return super(ProfileSerializer, self).update(instance, validated_data)
         #instance.email = validated_data.get('email', instance.email)
         #instance.name = validated_data.get('name', instance.name)

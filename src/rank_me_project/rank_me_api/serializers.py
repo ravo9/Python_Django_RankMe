@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import PictureItem, GradeItem, UserProfile
+from django.contrib.auth.hashers import make_password
 
 class ProfileSerializer(serializers.ModelSerializer):
     """A serializer for our Profile objects."""
@@ -36,6 +37,7 @@ class ProfileSerializer(serializers.ModelSerializer):
                 validated_data.get('user').get('password', instance.user.password)
             )
             instance.user.save()
+        return instance.user
 
         #validated_data['password'] = set_password(validated_data['password'])
         #validated_data.save()

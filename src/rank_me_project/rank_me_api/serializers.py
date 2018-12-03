@@ -30,7 +30,9 @@ class ProfileSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
-    def partial_update(self, instance, validated_data):
+    def update(self, instance, validated_data):
+        for f in ProfileSerializer.Meta.fields + ProfileSerializer.Meta.write_only_fields:
+            set_attr(instance, f, validated_data[f])
         instance.set_password(validated_data['password'])
         instance.save()
         return instance

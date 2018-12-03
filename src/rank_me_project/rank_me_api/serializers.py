@@ -31,13 +31,14 @@ class ProfileSerializer(serializers.ModelSerializer):
         return user
 
     def update(self, instance, validated_data):
+        instance.age = validated_data.get('age', instance.age)
         instance.set_password(validated_data['password'])
         instance.save()
         return super(ProfileSerializer, self).update(instance, validated_data)
         #instance.email = validated_data.get('email', instance.email)
         #instance.name = validated_data.get('name', instance.name)
         #instance.password = validated_data.get('password', instance.password)
-        #instance.age = validated_data.get('age', instance.age)
+
         #instance.gender = validated_data.get('gender', instance.gender)
         #instance.preference = validated_data.get('preference', instance.preference)
         #instance.given_grades_amount = validated_data.get('given_grades_amount', instance.given_grades_amount)

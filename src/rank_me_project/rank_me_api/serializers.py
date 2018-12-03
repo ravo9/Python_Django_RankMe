@@ -31,8 +31,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         return user
 
     def partial_update(self, instance, validated_data):
-        instance.age = validated_data.get('age', instance.age)
-        instance.make_password(validated_data['password'])
+        instance.set_password(instance.password)
         instance.save()
         return super(ProfileSerializer, self).update(instance, validated_data)
         #instance.email = validated_data.get('email', instance.email)

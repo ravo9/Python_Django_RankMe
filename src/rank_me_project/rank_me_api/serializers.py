@@ -31,13 +31,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
-    def update(self, instance, validated_data):
-        if 'user' in validated_data:
-            instance.user.password = make_password(
-                validated_data.get('user').get('password', instance.user.password)
-            )
-            instance.user.save()
-        return instance.user
+    #def update(self, instance, validated_data):
 
         #validated_data['password'] = set_password(validated_data['password'])
         #validated_data.save()

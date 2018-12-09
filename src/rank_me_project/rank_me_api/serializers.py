@@ -35,12 +35,14 @@ class ProfileSerializer(serializers.ModelSerializer):
         if ('password' in validated_data):
             instance.set_password(validated_data['password'])
             instance.save()
+        super.update(self, instance, validated_data)
         return instance
 
     def partial_update(self, instance, validated_data):
         if ('password' in validated_data):
             instance.set_password(validated_data['password'])
             instance.save()
+        super.partial_update(self, instance, validated_data)
         return instance
 
         #validated_data['password'] = set_password(validated_data['password'])

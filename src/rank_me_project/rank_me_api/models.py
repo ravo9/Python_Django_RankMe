@@ -62,7 +62,7 @@ class PictureItem(models.Model):
     profile         = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     comment         = models.CharField(max_length=255, null=True, blank=True)
     picture         = models.ImageField(upload_to='pictures')
-    timestamp       = models.DateTimeField(auto_now_add=True)
+    timestamp       = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return ""
@@ -75,7 +75,7 @@ class GradeItem(models.Model):
     comment         = models.CharField(max_length=255, null=True, blank=True)
     grading_profile = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL)
     grade           = models.IntegerField()
-    timestamp       = models.DateTimeField(auto_now_add=True)
+    timestamp       = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return ""

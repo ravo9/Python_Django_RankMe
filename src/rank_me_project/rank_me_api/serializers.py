@@ -72,7 +72,7 @@ class PictureItemSerializer(serializers.ModelSerializer):
             'picture',
             'timestamp',
         ]
-        read_only_fields = ['id', 'profile', 'timestamp']
+        read_only_fields = ['id', 'profile']
 
 
 class GradeItemSerializer(serializers.ModelSerializer):
@@ -86,4 +86,4 @@ class GradeItemSerializer(serializers.ModelSerializer):
             'grade',
             'timestamp',
         ]
-        read_only_fields = ['id', 'grading_profile', 'timestamp']
+        read_only_fields = ['id', 'grading_profile']

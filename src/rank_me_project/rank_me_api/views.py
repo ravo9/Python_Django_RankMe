@@ -79,7 +79,7 @@ class RandomPictureItemViewSet(viewsets.ModelViewSet):
         return self.kwargs['pk']
 
     def get_queryset(self):
-        queryset = queryset.exclude(profile__id == 67)
+        queryset = queryset.exclude(profile__id=67)
         random_picture = random.choice(self.queryset)
         return [random_picture]
 

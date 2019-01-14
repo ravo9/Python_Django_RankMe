@@ -75,6 +75,10 @@ class RandomPictureItemViewSet(viewsets.ModelViewSet):
     queryset = PictureItem.objects.all()
     permission_classes = (UpdateOwnPicture, IsAuthenticated)
 
+    # Searching feature stuff
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('profile__id',)
+
     def get_object(self):
         return self.kwargs['pk']
 

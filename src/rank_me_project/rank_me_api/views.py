@@ -75,6 +75,9 @@ class RandomPictureItemViewSet(viewsets.ModelViewSet):
     queryset = PictureItem.objects.all()
     permission_classes = (UpdateOwnPicture, IsAuthenticated)
 
+    def get_object(self):
+        return self.kwargs['pk']
+
     def get_queryset(self):
         random_picture = random.choice(self.queryset)
         return [random_picture]

@@ -80,9 +80,11 @@ class RandomPictureItemViewSet(viewsets.ModelViewSet):
         return obj
 
     def get_queryset(self):
-        filtered_queryset = self.queryset.exclude(profile__id=67)
-        random_picture = random.choice(filtered_queryset)
-        return [random_picture]
+        queryset = super(PictureItem, self).get_queryset()
+        return queryset.filter(profile=self.request.user)
+        #filtered_queryset = self.queryset.exclude(profile__id=67)
+        #random_picture = random.choice(filtered_queryset)
+        #return [random_picture]
 
 
 class GradeItemViewSet(viewsets.ModelViewSet):

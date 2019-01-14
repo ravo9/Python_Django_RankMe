@@ -76,10 +76,9 @@ class RandomPictureItemViewSet(viewsets.ModelViewSet):
     permission_classes = (UpdateOwnPicture, IsAuthenticated)
 
     def get_queryset(self):
-        return self.queryset.filter(~Q(profile=self.request.user))
-        #filtered_queryset = self.queryset.exclude(profile__id=67)
-        #random_picture = random.choice(filtered_queryset)
-        #return [random_picture]
+        filtered_queryset = self.queryset.filter(~Q(profile=self.request.user))
+        random_picture = random.choice(filtered_queryset)
+        return [random_picture]
 
 
 class GradeItemViewSet(viewsets.ModelViewSet):

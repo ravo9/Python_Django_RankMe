@@ -77,6 +77,7 @@ class RandomPictureItemViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         filtered_queryset = self.queryset.filter(~Q(profile=self.request.user))
+        pictures_already_graded = GradeItem.objects.all().filter(grading_profile=self.request.user)
         random_picture = random.choice(filtered_queryset)
         return [random_picture]
 

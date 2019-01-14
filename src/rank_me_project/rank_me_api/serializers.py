@@ -86,4 +86,4 @@ class GradeItemSerializer(serializers.ModelSerializer):
             'grade',
             'timestamp',
         ]
-        read_only_fields = ['id', 'grading_profile']
+        read_only_fields = ['id']

@@ -76,8 +76,7 @@ class RandomPictureItemViewSet(viewsets.ModelViewSet):
     permission_classes = (UpdateOwnPicture, IsAuthenticated)
 
     def get_queryset(self):
-        queryset = super(PictureItem, self).get_queryset()
-        return queryset.filter(profile=self.request.user)
+        return self.queryset.filter(profile=self.request.user)
         #filtered_queryset = self.queryset.exclude(profile__id=67)
         #random_picture = random.choice(filtered_queryset)
         #return [random_picture]

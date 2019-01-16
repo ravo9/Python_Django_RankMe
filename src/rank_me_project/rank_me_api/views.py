@@ -83,8 +83,8 @@ class RandomPictureItemViewSet(viewsets.ModelViewSet):
         #random_picture = random.choice(filtered_queryset)
         #return [random_picture]
         filtered_queryset_ids = []
-        for picture in filtered_queryset:
-            filtered_queryset_ids.append(picture__id)
+        #for picture in filtered_queryset:
+            #filtered_queryset_ids.append(picture__id)
         return filtered_queryset_ids
 
 

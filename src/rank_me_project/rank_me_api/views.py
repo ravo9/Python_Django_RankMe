@@ -80,8 +80,12 @@ class RandomPictureItemViewSet(viewsets.ModelViewSet):
         filtered_queryset = self.queryset.filter(~Q(profile=self.request.user))
         for grade in pictures_already_graded:
             filtered_queryset = filtered_queryset.filter(~Q(profile=grade__grading_profile))
-        random_picture = random.choice(filtered_queryset)
-        return [random_picture]
+        #random_picture = random.choice(filtered_queryset)
+        #return [random_picture]
+        filtered_queryset_ids = []
+        for picture in filtered_queryset:
+            filtered_queryset_ids.append(picture__id)
+        return filtered_queryset_ids
 
 
 class GradeItemViewSet(viewsets.ModelViewSet):

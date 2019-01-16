@@ -80,7 +80,7 @@ class RandomPictureItemViewSet(viewsets.ModelViewSet):
         filtered_queryset = self.queryset.filter(~Q(profile=self.request.user))
         if (len(pictures_already_graded) > 0):
             for grade in pictures_already_graded:
-                filtered_queryset = filtered_queryset.filter(~Q(profile=grade__grading_profile))
+                filtered_queryset = filtered_queryset.filter(~Q(profile.id=grade.grading_profile))
         #random_picture = random.choice(filtered_queryset)
         #return [random_picture]
         filtered_queryset_ids = []

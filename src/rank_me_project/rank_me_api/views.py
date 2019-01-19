@@ -84,7 +84,7 @@ class RandomPictureItemViewSet(viewsets.ModelViewSet):
 
         for grade in pictures_already_graded:
             print >> sys.stderr, 'Goodbye, cruel world!'
-            filtered_queryset = filtered_queryset.filter(~Q(profile=grade.grading_profile))
+            filtered_queryset = filtered_queryset.filter(~Q(profile=grade__grading_profile))
         #random_picture = random.choice(filtered_queryset)
         #return [random_picture]
         #filtered_queryset_ids = []

@@ -83,7 +83,7 @@ class RandomPictureItemViewSet(viewsets.ModelViewSet):
         filtered_queryset = self.queryset.filter(~Q(profile=self.request.user))
 
         for grade in pictures_already_graded:
-            print(grade.grading_profile)
+            print >> sys.stderr, 'Goodbye, cruel world!'
             filtered_queryset = filtered_queryset.filter(~Q(profile=grade.grading_profile))
         #random_picture = random.choice(filtered_queryset)
         #return [random_picture]

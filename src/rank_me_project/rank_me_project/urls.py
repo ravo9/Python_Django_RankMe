@@ -4,7 +4,7 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
-from django.contrib.auth.views import password_reset, password_reset_done, password reset_confirm
+from django.contrib.auth.views import password_reset, password_reset_done, password_reset_confirm
 
 router = DefaultRouter()
 router.register('profiles', views.ProfileViewSet)

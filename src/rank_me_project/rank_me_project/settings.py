@@ -56,7 +56,7 @@ ROOT_URLCONF = 'rank_me_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,6 +130,11 @@ AUTH_USER_MODEL = 'rank_me_api.UserProfile'
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (),
     'DEFAULT_AUTHENTICATION_CLASSES': (),
+}
+
+REST_AUTH_SERIALIZERS = {
+    'PASSWORD_RESET_SERIALIZER':
+        'yourproject_app.serializers.PasswordResetSerializer',
 }
 
 EMAIL_USE_TLS = True

@@ -33,6 +33,17 @@ class LoginViewSet(viewsets.ViewSet):
         return Response({'token': token.key, 'id': token.user_id})
 
 
+class ResetPasswordViewSet(viewsets.ViewSet):
+
+    def csrf_exempt(view_func):
+        """Marks a view function as being exempt from the CSRF view protection."""
+        def wrapped_view(request,*args, **kwargs):
+            return view_func(request, *args, **kwargs)
+            if request.META.has_key('HTTP_X_SKIP_CSRF'):
+                wrapped_view.csrf_exempt = True
+        return wraps(view_func, assigned=available_attrs(view_func))(wrapped_view)
+
+
 class ProfileViewSet(viewsets.ModelViewSet):
     """Handles creating, reading and updating profiles."""
 

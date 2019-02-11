@@ -134,7 +134,7 @@ REST_FRAMEWORK = {
 
 REST_AUTH_SERIALIZERS = {
     'PASSWORD_RESET_SERIALIZER':
-        'yourproject_app.serializers.PasswordResetSerializer',
+        'rank_me_api.serializers.PasswordResetSerializer',
 }
 
 EMAIL_USE_TLS = True

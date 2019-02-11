@@ -137,3 +137,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'rankme.contact@gmail.com'
 EMAIL_HOST_PASSWORD = 'rankme176'
+DEFAULT_FROM_EMAIL = 'RankMe Support'

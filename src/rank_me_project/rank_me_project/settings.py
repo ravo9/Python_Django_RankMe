@@ -132,11 +132,6 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (),
 }
 
-REST_AUTH_SERIALIZERS = {
-    'PASSWORD_RESET_SERIALIZER':
-        'rank_me_api.serializers.PasswordResetSerializer',
-}
-
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587

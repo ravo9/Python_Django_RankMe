@@ -1,6 +1,9 @@
 from rest_framework import serializers
 from .models import PictureItem, GradeItem, UserProfile
 from django.contrib.auth.hashers import make_password
+from django.contrib.auth.forms import PasswordResetForm
+from django.conf import settings
+from django.utils.translation import gettext as _
 
 class ProfileSerializer(serializers.ModelSerializer):
     """A serializer for our Profile objects."""

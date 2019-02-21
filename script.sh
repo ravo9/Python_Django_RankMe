@@ -1,5 +1,3 @@
-echo >> "FlagTest 01"
-sudo -i
 echo >> "FlagTest 02"
 cd /usr/local/apps/rankme-api
 echo >> "FlagTest 03"

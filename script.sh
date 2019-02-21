@@ -1,4 +1,4 @@
-cd ~/workspace/RankMe Project/Back-end/rankme-api
-git add .
-git commit -m "Update"
-git push
+sudo -i
+cd /usr/local/apps/rankme-api
+git pull
+supervisorctl restart all

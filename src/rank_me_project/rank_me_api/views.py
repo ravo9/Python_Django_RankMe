@@ -13,7 +13,7 @@ from .permissions import IsOwnerOrReadOnly, UpdateOwnProfile, UpdateOwnPicture, 
 from rank_me_project import settings
 from wsgiref.util import FileWrapper
 from django.http import HttpResponse
-from django.utils import smart_str
+from django.utils.encoding import smart_str
 
 class RegisterViewSet(viewsets.ModelViewSet):
     serializer_class        = ProfileSerializer

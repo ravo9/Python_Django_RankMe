@@ -1,23 +1,19 @@
-import random
-import os
+import random, os, mimetypes
 from django.db.models import Q
-from rest_framework import generics, mixins, viewsets
+from rest_framework import generics, mixins, viewsets, filters
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
-from .models import PictureItem, GradeItem, UserProfile
-from .serializers import PictureItemSerializer, GradeItemSerializer, ProfileSerializer
-from .permissions import IsOwnerOrReadOnly, UpdateOwnProfile, UpdateOwnPicture, ReadOnly
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
-# Viewset req.
-from rest_framework import filters
 from rest_framework.authentication import TokenAuthentication
+from .models import PictureItem, GradeItem, UserProfile
+from .serializers import PictureItemSerializer, GradeItemSerializer, ProfileSerializer
+from .permissions import IsOwnerOrReadOnly, UpdateOwnProfile, UpdateOwnPicture, ReadOnly
 from rank_me_project import settings
 from wsgiref.util import FileWrapper
-import mimetypes
 from django.http import HttpResponse
-
+from django.utils import smart_str
 
 class RegisterViewSet(viewsets.ModelViewSet):
     serializer_class        = ProfileSerializer

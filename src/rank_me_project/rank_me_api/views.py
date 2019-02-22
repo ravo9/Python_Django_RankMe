@@ -12,6 +12,7 @@ from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnl
 # Viewset req.
 from rest_framework import filters
 from rest_framework.authentication import TokenAuthentication
+from ../rank_me_project import settings
 
 
 class RegisterViewSet(viewsets.ModelViewSet):

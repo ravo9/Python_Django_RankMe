@@ -15,6 +15,7 @@ from rest_framework.authentication import TokenAuthentication
 from rank_me_project import settings
 from wsgiref.util import FileWrapper
 import mimetypes
+from django.http import HttpResponse
 
 
 class RegisterViewSet(viewsets.ModelViewSet):

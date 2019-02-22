@@ -14,6 +14,7 @@ from rest_framework import filters
 from rest_framework.authentication import TokenAuthentication
 from rank_me_project import settings
 from wsgiref.util import FileWrapper
+import mimetypes
 
 
 class RegisterViewSet(viewsets.ModelViewSet):

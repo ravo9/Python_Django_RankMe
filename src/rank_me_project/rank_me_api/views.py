@@ -15,6 +15,7 @@ from wsgiref.util import FileWrapper
 from django.http import HttpResponse
 from django.utils.encoding import smart_str
 
+
 class RegisterViewSet(viewsets.ModelViewSet):
     serializer_class        = ProfileSerializer
     queryset                = UserProfile.objects.all()
@@ -120,7 +121,7 @@ class GradeItemViewSet(viewsets.ModelViewSet):
         return qs
 
 def download(request,file_name):
-    file_path = settings.MEDIA_ROOT +'/'+ file_name
+    file_path = settings.MEDIA_ROOT +'/download/'+ file_name
     file_wrapper = FileWrapper(open(file_path,'rb'))
     file_mimetype = mimetypes.guess_type(file_path)
     response = HttpResponse(file_wrapper, content_type=file_mimetype )

@@ -25,7 +25,7 @@ SECRET_KEY = 'w6ry&h9*7d*n*yh&a!94y)17xsm%d*39mjxd^d4h!9i=870btq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['rank-me.co.uk']
+ALLOWED_HOSTS = ['rankMeLoadBalancer-378788423.us-east-2.elb.amazonaws.com']
 
 # Application definition
 

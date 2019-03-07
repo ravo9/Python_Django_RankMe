@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['rank-me.co.uk']
 
 # HTTP -> HTTPS Redirection
 SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Application definition
 

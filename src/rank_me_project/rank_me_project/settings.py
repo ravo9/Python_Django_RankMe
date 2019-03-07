@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['rank-me.co.uk']
 
+# HTTP -> HTTPS Redirection
+SECURE_SSL_REDIRECT = True
+
 # Application definition
 
 INSTALLED_APPS = [

@@ -27,7 +27,7 @@ urlpatterns = [
     url(r'^reset-password/complete/$', password_reset_complete, name='password_reset_complete'),
     url(r'^download/(?P<file_name>.+)$', views.download),
     url(r'^.well-known/pki-validation/(?P<file_name>.+)$', views.download),
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'media'})
+    url(r'^media/(?P<path>.*)$', views.static.serve, {'document_root': 'media'})
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

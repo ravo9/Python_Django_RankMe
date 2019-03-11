@@ -34,6 +34,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     email                   = models.EmailField(max_length=255, unique=True)
     # I have just added password here.
     password                = models.CharField(max_length=16)
+    is_facebook_account     = models.BooleanField(default=False)
     name                    = models.CharField(max_length=255)
     age                     = models.IntegerField(null=True, blank=True)
     gender                  = models.CharField(max_length=255, blank=True)

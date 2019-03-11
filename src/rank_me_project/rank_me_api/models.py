@@ -34,7 +34,6 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     email                   = models.EmailField(max_length=255, unique=True)
     # I have just added password here.
     password                = models.CharField(max_length=16)
-    is_facebook_account     = models.BooleanField(blank=False)
     name                    = models.CharField(max_length=255)
     age                     = models.IntegerField(null=True, blank=True)
     gender                  = models.CharField(max_length=255, blank=True)
@@ -43,6 +42,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     main_profile_picture    = models.ForeignKey('PictureItem', null=True, blank=True, on_delete=models.SET_NULL)
     is_active               = models.BooleanField(default=True)
     is_staff                = models.BooleanField(default=False)
+    is_facebook_account     = models.BooleanField(blank=False)
     objects                 = UserProfileManager()
     USERNAME_FIELD          = 'email'
     REQUIRED_FIELDS         = ['name']

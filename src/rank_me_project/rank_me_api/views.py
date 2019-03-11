@@ -120,7 +120,7 @@ class GradeItemViewSet(viewsets.ModelViewSet):
         qs = super().get_queryset()
         return qs
 
-def download(request,file_name):
+def download(request, file_name):
     file_path = settings.MEDIA_ROOT +'/download/'+ file_name
     file_wrapper = FileWrapper(open(file_path,'rb'))
     file_mimetype = mimetypes.guess_type(file_path)

@@ -41,7 +41,8 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     main_profile_picture    = models.ForeignKey('PictureItem', null=True, blank=True, on_delete=models.SET_NULL)
     is_active               = models.BooleanField(default=True)
     is_staff                = models.BooleanField(default=False)
-    is_facebook_account     = models.BooleanField(null=True)
+    # For some reason this 'is_facebook_account' value is always set as default one.
+    # is_facebook_account     = models.BooleanField(default=False)
     objects                 = UserProfileManager()
     USERNAME_FIELD          = 'email'
     REQUIRED_FIELDS         = ['name']

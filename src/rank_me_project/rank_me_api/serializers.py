@@ -19,8 +19,8 @@ class ProfileSerializer(serializers.ModelSerializer):
             'gender',
             'preference',
             'given_grades_amount',
-            'main_profile_picture',
-            'is_facebook_account'
+            'main_profile_picture'
+            #'is_facebook_account'
             )
         extra_kwargs = {'password': {'write_only': True}}
 
